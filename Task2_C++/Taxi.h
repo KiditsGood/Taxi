@@ -11,8 +11,11 @@ public:
 	vector <Station*> route;
 	void SetRoute(Station* startpoint, Station* endpoint);
 	Taxi(int, Station* currentLocation);
+	vector <Station*> stations;
+	int getCapacity();
+	void setCapacity(int);
 
 private:
-	int _capacity = 3;
+	int _capacity;
 	Station* _currentlocation;
 };

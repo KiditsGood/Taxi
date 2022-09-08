@@ -7,11 +7,12 @@ class Passenger;
 class Station {
 private:
 	string _name;
-	string _location;
+	int _id;
 public:
 	void AddPassenger(Passenger*);
 	void RemovePassenger(Passenger*);
 	vector <Passenger*> passengers;
-	Station(string, string);
+	Station(string, int);
+	int getId();
 };
 
