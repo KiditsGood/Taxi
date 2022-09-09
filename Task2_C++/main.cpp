@@ -34,7 +34,7 @@ int main()
 	taxi->stations = stations;
 
 	for (int i = 0; i < passengers.size(); i++) {
-		stations.at(i)->passengers.push_back(passengers.at(i));
+		stations.at(i)->AddPassenger(passengers.at(i));
 	}
 
 	stations.at(0)->passengers.at(0)->GetInTaxi(taxi);
@@ -43,15 +43,22 @@ int main()
 	cout << "\nPassengers :\n";
 	printNames<Passenger>(passengers);
 
-
-	taxi->SetRoute(stations.at(1), stations.at(3));
-	cout << "\nRoute 1->3 :\n";
+	taxi->SetRoute(stations.at(0), stations.at(4));
+	cout << "\nRoute 0->4 :\n";
 	printNames<Station>(taxi->route);
-
-	/*taxi->SetRoute(stations.at(3), stations.at(1));
-	cout << "\nRoute 3->1 :\n";
-	printNames<Station>(taxi->route);*/
+	cout << "\n";
 
 	taxi->followRoute();
+
+	taxi->SetRoute(stations.at(4), stations.at(0));
+	cout << "\nRoute 4->0 :\n";
+	printNames<Station>(taxi->route);
+	cout << "\n";
+
+	taxi->followRoute();
+
+	// 1) Пользовательский ввод
+	// 2) При посадке в такси удалять с остановки
+	// 3) Рациональная посадка в такси
 }
 

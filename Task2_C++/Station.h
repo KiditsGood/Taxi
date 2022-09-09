@@ -5,6 +5,7 @@
 using namespace std;
 
 class Passenger;
+
 class Station {
 private:
 	string _name;
@@ -16,5 +17,6 @@ public:
 	Station(string, int);
 	int getId();
 	string getName();
+	~Station();
 };
 

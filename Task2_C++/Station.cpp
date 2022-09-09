@@ -14,7 +14,6 @@ void Station::RemovePassenger(Passenger* passenger) {
 
 		if (currentPassenger->getName() == passenger->getName()) {
 			this->passengers.erase(this->passengers.begin() + i);
-			delete currentPassenger;
 			break;
 		}
 	}
@@ -26,4 +25,13 @@ int Station::getId() {
 
 string Station::getName() {
 	return _name;
+}
+
+Station::~Station() {
+	for (int i = 0; i < (int)passengers.size(); i++)
+	{
+		if (passengers.at(i) != NULL) {
+			delete passengers.at(i);
+		}
+	}
 }

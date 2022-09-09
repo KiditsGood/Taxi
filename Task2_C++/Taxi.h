@@ -3,11 +3,11 @@
 #include <vector>
 #include "Passenger.h"
 #include "Station.h"
-#include <cmath>
 using namespace std;
 
 class Passenger;
 class Station;
+
 class Taxi {
 public:
 	vector <Passenger*> passengers;
@@ -18,7 +18,9 @@ public:
 	int getCapacity();
 	void setCapacity(int);
 	void followRoute();
-
+	void releasePassengers(Station* currentStation);
+	void letIn(Station* currentStation, bool straightPath);
+	~Taxi();
 private:
 	int _capacity;
 	Station* _currentlocation;

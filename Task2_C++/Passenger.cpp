@@ -18,8 +18,6 @@ void Passenger::GetOutTaxi(Taxi* taxi) {
 			taxi->passengers.erase(taxi->passengers.begin() + i);
 		}
 	}
-
-	delete this;
 }
 
 string Passenger::getName() {
