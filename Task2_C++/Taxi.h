@@ -3,8 +3,11 @@
 #include <vector>
 #include "Passenger.h"
 #include "Station.h"
+#include <cmath>
 using namespace std;
 
+class Passenger;
+class Station;
 class Taxi {
 public:
 	vector <Passenger*> passengers;
@@ -14,6 +17,7 @@ public:
 	vector <Station*> stations;
 	int getCapacity();
 	void setCapacity(int);
+	void followRoute();
 
 private:
 	int _capacity;

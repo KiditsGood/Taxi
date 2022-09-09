@@ -21,3 +21,10 @@ void Passenger::GetOutTaxi(Taxi* taxi) {
 
 	delete this;
 }
+
+string Passenger::getName() {
+	return _name;
+}
+Station* Passenger::getEndPoint() {
+	return _endpoint;
+}

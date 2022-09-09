@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "Passenger.h"
 using namespace std;
 
 class Passenger;
@@ -14,5 +15,6 @@ public:
 	vector <Passenger*> passengers;
 	Station(string, int);
 	int getId();
+	string getName();
 };
 
